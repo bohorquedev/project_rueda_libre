@@ -7,45 +7,132 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <main class="container-reservas">
-        <h2>Reservas</h2>
-        <div class="form-reserva">
+    <header>
+        <nav class="navbar">
+        <img  class="img-icon-f" src="./img/icon-img.jpeg" alt="Imagen de mi icono de la pagina">
+        <ul class="nav-items">
+            <li><a href="">Inicio</a></li>
+            <li><a href="./page/tarifas.html">Tarifas</a></li>
+            <li><a href="./page/reservas.html">Reservas</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Reserva tu bicicleta</h1>
+    <span>1- Fecha y sede</span>
+    <span>2- Bicicleta</span>
+    <span>3- Tus datos</span>
+    <main id="main-reservas">
+        
+
+        <section class="fecha-sede">
+            <h2>
+                1. Fechas y sede 
+            </h2>
             <form action="">
-            <fieldset>
-                <legend>Datos personales</legend>
-                <label for="">Nombre
-                    <input type="text">
-                </label><br>
-                <label for="">Apellido
-                    <input type="text">
-                </label><br>
-                <label for="">Email
-                    <input type="text">
-                </label><br>
-                <label for="">Numero
-                    <input type="text">
-                </label><br>
-                <label for="">Dirrecion
-                    <input type="text">
-                </label>
+                <label for="sede">Seleccione una sede</label>
+                <select name="sede" id="sede">
+                    <option value="" disabled selected>Selecione una sede</option>
+                    <option value="Principal">Principal</option>
+                    <option value="Parque">Parque</option>
+                    <option value="EStadio">Estadio</option>
+                </select>
+                <label for="date-inicio">Fecha de inicio</label>
+                <input class="date" name="date-inicio" type="date">
+                <label for="date-fin">Fecha de fin</label>
+                <input class="date" name="date-fin" type="date">
+                <label for="datetime"></label>
+                <input id="datetime" name="datetime" type="datetime">
+            </form>
 
-                
-            </fieldset>
-            <button class="button-form">Reservar</button>
-           
-        </form>
 
-        </div>
-        <hgroup>
-            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, doloribus?</h3>
-        </hgroup>
-        <aside class="aside-reservas">
-            <h4>Nuestras politicas</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus velit ipsa non recusandae voluptates voluptatibus ab numquam facilis in voluptas animi vero dolore, quae quidem corrupti laudantium placeat necessitatibus nihil officiis illum. Eveniet maiores doloribus repellendus porro, similique possimus doloremque, facere dolor officia repellat nostrum! Totam perspiciatis dicta alias assumenda.</p>
-            <img src="" alt="">
 
-        </aside>
+        </section>
+        <section class="bicicleta-elejir">
+            <h2>
+                2. Elije tu bicicleta
+            </h2>
+            <span>Todas</span>
+            <span>Ruta</span>
+            <span>Montana</span>
+            <span>Urbana</span>
+            <article class="bici-article">
+                <img src="" alt="">
+                <ul>
+                    <li>Nombre bici</li>
+                    <li>Tipo | Talla</li>
+                    <li>Precio / dia</li>
+                </ul>
+                <button type="button">Seleccionar</button>
+            </article>
+            <article class="bici-article">
+                <img src="" alt="">
+                <ul>
+                    <li>Nombre bici</li>
+                    <li>Tipo | Talla</li>
+                    <li>Precio / dia</li>
+                </ul>
+                <button type="button">Seleccionar</button>
+            </article>
+            <article class="bici-article">
+                <img src="" alt="">
+                <ul>
+                    <li>Nombre bici</li>
+                    <li>Tipo | Talla</li>
+                    <li>Precio / dia</li>
+                </ul>
+                <button type="button">Seleccionar</button>
+            </article>
+
+
+
+        </section>
+        <section class="datos-user">
+            <h2>
+                3. Tus datos
+            </h2>
+            <form action="">
+                <label class="user-form" for="name">Nombre completo</label>
+                <input name="name" type="text">
+                <label class="user-form" for="email">Correo electronico</label>
+                <input name="email" type="email">
+                <label class="user-form" for="tel">Telefono</label>
+                <input name="tel" type="tel">
+                <label class="user-form" for="notas">Notas</label>
+                <input name="notas" type="text">
+                <label class="user-form" for="terminos-con">Acepto terminos y condiciones</label>
+                <input name="terminos-con" type="checkbox">
+
+
+            </form>
+
+
+
+        </section>
+        
+    
     </main>
+    <aside>
+        <h3>Resume</h3>
+        <img src="" alt="">
+        <ul>
+            <li>Nombre</li>
+            <li>Sede</li>
+        </ul>
+        <hr>
+        <h3>Extras</h3>
+        <form action="">
+            <label for="">Casco || Precio</label>
+            <input type="checkbox">
+            <label for="">Candado || Precio</label>
+            <input type="checkbox">
+        </form>
+        <hr>
+        <h3>Total</h3>
+        <span>{Total}</span>
+        <button type="button">Confirmar reserva</button>
+        <span>Politica de cancelacion</span>
+        
+    </aside>
 
   
 
