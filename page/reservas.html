@@ -4,148 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
-    <link rel="stylesheet" href="../style/style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <style>
+    .caja {
+      border: 2px solid #444;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .form-control,
+    .form-select {
+      border: 2px solid #666;
+      border-radius: 6px;
+      min-height: 44px;
+    }
+    .form-label { font-weight: 700; font-size: .875rem; }
+    .form-check-input { width: 1.25rem; height: 1.25rem; border: 2px solid #666; }
+    .btn-reservar {
+      background: #222; color: #fff;
+      border: 2px solid #222; border-radius: 6px;
+      min-height: 48px; font-weight: 700;
+    }
+    .btn-reservar:hover { background: #000; color: #fff; }
+  </style>
+   <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-        <img  class="img-icon-f" src="./img/icon-img.jpeg" alt="Imagen de mi icono de la pagina">
-        <ul class="nav-items">
-            <li><a href="">Inicio</a></li>
-            <li><a href="./page/tarifas.html">Tarifas</a></li>
-            <li><a href="./page/reservas.html">Reservas</a></li>
+    <header class="p-2">
+    <nav class="navbar navbar-expand-md bg-white border border-2 border-dark-subtle rounded-3 px-3">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="../index.html">
+        <img src="../img/icon-img.jpeg" alt="Logo de la página"
+             width="52" height="52" class="rounded-circle object-fit-cover">
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-md-3">
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="./tarifas.html">Tarifas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold active" aria-current="page" href="./reservas.html">Reservas</a>
+          </li>
         </ul>
-      </nav>
+      </div>
+
+    </div>
+    </nav>
     </header>
-    <h1>Reserva tu bicicleta</h1>
-    <span>1- Fecha y sede</span>
-    <span>2- Bicicleta</span>
-    <span>3- Tus datos</span>
-    <main id="main-reservas">
+        <div style=" font-weight: bold;
+    margin-left: 20vw;
+    gap: 20px;">
+            <h1>Reserva tu bicicleta</h1>
+            <span style="margin: 20px;
+    padding: 5px;
+    border: 2px solid ;
+    border-radius: 5px;
+    background-color: #F5F5F5">1- Sede y fecha</span>
+            <span style="margin: 20px;
+    padding: 5px;
+    border: 2px solid ;
+    border-radius: 5px;
+    background-color: #F5F5F5">2- Bicicleta</span>
+            <span style="margin: 20px;
+    padding: 5px;
+    border: 2px solid ;
+    border-radius: 5px;
+    background-color: #F5F5F5">3- Tus Datos</span>
+        </div>
+    
+    <main class="container py-4<">
+      
         
 
-        <section class="fecha-sede">
-            <h2>
-                1. Fechas y sede 
-            </h2>
-            <form action="">
-                <label class="fecha-sede-form"  for="sede">Seleccione una sede</label>
-                <select name="sede" id="sede">
-                    <option value="" disabled selected>Selecione una sede</option>
-                    <option value="Principal">Principal</option>
-                    <option value="Parque">Parque</option>
-                    <option value="EStadio">Estadio</option>
+    <form action="#" method="post" novalidate>
+      <div id="contenedor-form">
+
+        <div class="col-lg-8">
+
+          <section class="caja p-4 mb-4" id="fechas">
+            <h2 class="h5 mb-3">1. Fechas y sede</h2>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="sede" class="form-label">Sede de recogida</label>
+                <select id="sede" name="sede" class="form-select" required>
+                  <option value="" selected>Selecciona una sede</option>
+                  <option value="1">[SEDE 1]</option>
+                  <option value="2">[SEDE 2]</option>
                 </select>
-                <label class="" for="date-inicio">
-                    Fecha de inicio
-                <input name="date-inicio" type="date">
+              </div>
+              <div class="col-md-6">
+                <label for="hora" class="form-label">Hora de recogida</label>
+                <input type="time" id="hora" name="hora" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label for="inicio" class="form-label">Fecha de inicio</label>
+                <input type="date" id="inicio" name="inicio" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label for="fin" class="form-label">Fecha de fin</label>
+                <input type="date" id="fin" name="fin" class="form-control" required>
+              </div>
+            </div>
+          </section>
+
+          <section class="caja p-4 mb-4" id="bicicleta">
+            <h2 class="h5 mb-3">2. Elige tu bicicleta</h2>
+            <div class="row g-3">
+
+              <div class="col-sm-6 col-xl-4">
+                <input type="radio" class="btn-check" name="bici" id="bici1" value="1" required>
+                <label class="btn btn-outline-dark w-100 text-start p-3" for="bici1">
+                  <strong class="d-block">[NOMBRE BICI]</strong>
+                  <span class="small d-block">[TIPO] · [TALLA]</span>
+                  <strong>[PRECIO] / día</strong>
                 </label>
-                
-                <label class="" for="date-fin">
-                    Fecha de fin
-                    <input name="date-fin" type="date">
+              </div>
+
+              <div class="col-sm-6 col-xl-4">
+                <input type="radio" class="btn-check" name="bici" id="bici2" value="2">
+                <label class="btn btn-outline-dark w-100 text-start p-3" for="bici2">
+                  <strong class="d-block">[NOMBRE BICI]</strong>
+                  <span class="small d-block">[TIPO] · [TALLA]</span>
+                  <strong>[PRECIO] / día</strong>
                 </label>
-                
-                <label class="" for="datetime">
-                    Hora inicio
-                <input name="datetime" type="datetime">
+              </div>
+
+              <div class="col-sm-6 col-xl-4">
+                <input type="radio" class="btn-check" name="bici" id="bici3" value="3">
+                <label class="btn btn-outline-dark w-100 text-start p-3" for="bici3">
+                  <strong class="d-block">[NOMBRE BICI]</strong>
+                  <span class="small d-block">[TIPO] · [TALLA]</span>
+                  <strong>[PRECIO] / día</strong>
                 </label>
-                
-            </form>
+              </div>
 
+            </div>
+          </section>
 
+          <section class="caja p-4" id="datos">
+            <h2 class="h5 mb-3">3. Tus datos</h2>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="name" required>
+              </div>
+              <div class="col-md-4">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" class="form-control" autocomplete="email" required>
+              </div>
+              <div class="col-md-4">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" class="form-control" autocomplete="tel" required>
+              </div>
+              <div class="col-12">
+                <label for="notas" class="form-label">Notas (opcional)</label>
+                <textarea id="notas" name="notas" class="form-control" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terminos" name="terminos" required>
+                  <label class="form-check-label small" for="terminos">
+                    Acepto los términos y condiciones de alquiler
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
 
-        </section>
-        <section class="bicicleta-elejir">
-            <h2>
-                2. Elije tu bicicleta
-            </h2>
-            <span>Todas</span>
-            <span>Ruta</span>
-            <span>Montana</span>
-            <span>Urbana</span>
-            <article class="bici-article">
-                <img src="" alt="">
-                <ul>
-                    <li>Nombre bici</li>
-                    <li>Tipo | Talla</li>
-                    <li>Precio / dia</li>
-                </ul>
-                <button type="button">Seleccionar</button>
-            </article>
-            <article class="bici-article">
-                <img src="" alt="">
-                <ul>
-                    <li>Nombre bici</li>
-                    <li>Tipo | Talla</li>
-                    <li>Precio / dia</li>
-                </ul>
-                <button type="button">Seleccionar</button>
-            </article>
-            <article class="bici-article">
-                <img src="" alt="">
-                <ul>
-                    <li>Nombre bici</li>
-                    <li>Tipo | Talla</li>
-                    <li>Precio / dia</li>
-                </ul>
-                <button type="button">Seleccionar</button>
-            </article>
+        <aside class="col-lg-4 c" >
+          <div class="caja p-4 sticky-lg-top" style="top: 1rem; color: #000;">
+            <h2 class="h5 mb-3">Resumen</h2>
 
+            <p class="small fw-bold mb-2">Extras</p>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="casco" name="extras" value="casco">
+              <label class="form-check-label small" for="casco">Casco · [PRECIO]</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="candado" name="extras" value="candado">
+              <label class="form-check-label small" for="candado">Candado · [PRECIO]</label>
+            </div>
 
+            <hr>
+            <div class="d-flex justify-content-between fs-5 fw-bold mb-3">
+              <span>Total</span><span>[TOTAL]</span>
+            </div>
 
-        </section>
-        <section class="datos-user">
-            <h2>
-                3. Tus datos
-            </h2>
-            <form action="">
-                <label class="user-form" for="name">Nombre completo</label>
-                <input name="name" type="text">
-                <label class="user-form" for="email">Correo electronico</label>
-                <input name="email" type="email">
-                <label class="user-form" for="tel">Telefono</label>
-                <input name="tel" type="tel">
-                <label class="user-form" for="notas">Notas</label>
-                <input name="notas" type="text">
-                <label class="user-form" for="terminos-con">Acepto terminos y condiciones</label>
-                <input name="terminos-con" type="checkbox">
+            <button type="button" class="btn btn-reservar w-100">Confirmar reserva</button>
+            <p class="small text-secondary mt-2 mb-0">[POLÍTICA DE CANCELACIÓN]</p>
+          </div>
+        </aside>
 
-
-            </form>
-
-
-
-        </section>
-        
+      </div>
+    </form>
     
     </main>
-    <aside>
-        <h3>Resume</h3>
-        <img src="" alt="">
-        <ul>
-            <li>Nombre</li>
-            <li>Sede</li>
-        </ul>
-        <hr>
-        <h3>Extras</h3>
-        <form action="">
-            <label for="">Casco || Precio</label>
-            <input type="checkbox">
-            <label for="">Candado || Precio</label>
-            <input type="checkbox">
-        </form>
-        <hr>
-        <h3>Total</h3>
-        <span>{Total}</span>
-        <button type="button">Confirmar reserva</button>
-        <span>Politica de cancelacion</span>
-        
-    </aside>
+    <footer class="p-2 mt-4">
+  <div class="bg-white text-dark border border-2 border-dark-subtle rounded-3 px-3 py-3">
+    <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
+
+      <span class="fw-bold">Rueda Libre</span>
+
+      <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-3 mb-0">
+        <li><a class="link-dark" href="mailto:correo@ejemplo.com">ruedalibre@outlook.com</a></li>
+        <li><a class="link-dark" href="tel:+570000000000">320000000</a></li>
+        <li><a class="link-dark" href="#">INSTAGRAM</a></li>
+      </ul>
+
+      <span>© 2026 Rueda Libre </span>
+
+    </div>
+  </div>
+</footer>
+
 
   
 
     
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
